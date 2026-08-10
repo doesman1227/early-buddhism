@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>原始仏教 — 心を観察し、執着を手放す</title>
+<meta name="description" content="約2500年前、釈迦が説いた最初の教え・原始仏教。三法印・四聖諦・八正道・瞑想を、苦と執着・メタ認知・認知バイアス・マインドフルネスという現代の視点から読み解く。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3EFE6; --surface:#FAF7EF; --surface2:#FFFFFF; --ink:#26241F; --muted:#5c574d;
+    --faint:#9a9384; --line:#E3DCCB; --line-soft:#EDE7D8;
+    --accent:#3E5170; --accent-ink:#334462; --accent-wash:#E7E9F0;
+    --serif:"Noto Serif JP",serif; --sans:"Noto Sans JP",system-ui,sans-serif;
+    --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  }
+  @media(prefers-color-scheme:dark){:root{
+    --bg:#17161B; --surface:#1F1E24; --surface2:#26252C; --ink:#ECE8DE; --muted:#A8A294;
+    --faint:#6E695C; --line:#2D2B31; --line-soft:#25242A;
+    --accent:#8FA0C4; --accent-ink:#A6B5D6; --accent-wash:#20242F;
+  }}
+  *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    font-size:16px;line-height:2;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:700px;margin:0 auto;padding:0 22px}
+  a{color:var(--accent-ink)}
+  .topnav{padding:22px 0 0}
+  .topnav a{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);text-decoration:none}
+  .topnav a:hover{color:var(--accent-ink)}
+
+  header.hero{padding:52px 0 34px;border-bottom:1px solid var(--line)}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent-ink);margin:0 0 20px;display:flex;align-items:center;gap:12px}
+  .kicker::before{content:"";width:26px;height:1px;background:var(--accent);opacity:.7}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,5.6vw,3rem);line-height:1.35;
+    letter-spacing:.04em;margin:0 0 22px;text-wrap:balance}
+  .lead{font-family:var(--serif);font-weight:500;font-size:clamp(1.02rem,2.1vw,1.18rem);
+    line-height:2;color:var(--muted);margin:0;max-width:46ch}
+
+  section{padding:46px 0;border-bottom:1px solid var(--line-soft)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent-ink);margin:0 0 14px}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3.4vw,1.95rem);line-height:1.45;
+    letter-spacing:.02em;margin:0 0 18px;text-wrap:balance}
+  h3{font-family:var(--serif);font-weight:600;font-size:1.14rem;margin:24px 0 8px}
+  p{margin:0 0 18px}
+  strong{font-weight:700}
+  .measure{max-width:64ch}
+  em.term{font-style:normal;color:var(--accent-ink);font-weight:500}
+
+  .pull{font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.55rem);line-height:1.8;
+    color:var(--ink);border-left:2px solid var(--accent);padding:6px 0 6px 24px;margin:30px 0;text-wrap:balance}
+
+  /* teaching list (三法印/四聖諦/八正道) */
+  .teach{list-style:none;margin:24px 0 8px;padding:0;display:flex;flex-direction:column;gap:1px;
+    background:var(--line-soft);border-block:1px solid var(--line-soft)}
+  .teach li{background:var(--bg);display:grid;grid-template-columns:130px 1fr;gap:18px;padding:16px 4px;align-items:baseline}
+  .teach .lbl{font-family:var(--serif);font-weight:600;color:var(--accent-ink);font-size:1.02rem}
+  .teach .lbl small{display:block;font-family:var(--mono);font-weight:400;font-size:11px;color:var(--faint);letter-spacing:.04em;margin-top:2px}
+  .teach .txt{font-size:14.5px;color:var(--muted);line-height:1.8}
+  @media(max-width:560px){.teach li{grid-template-columns:1fr;gap:4px}}
+
+  /* modern-lens callout */
+  .lens{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:0 6px 6px 0;padding:24px 24px 8px;margin:0}
+  .lens .tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:#fff;background:var(--accent);padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:14px}
+  @media(prefers-color-scheme:dark){.lens .tag{color:#16181a}}
+  .lens h2{font-size:clamp(1.35rem,3vw,1.7rem);margin-bottom:14px}
+
+  footer{margin-top:10px;padding:34px 0 60px;border-top:1px solid var(--line)}
+  footer .back{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-decoration:none}
+  footer .back:hover{color:var(--accent-ink)}
+  .disclaimer{margin-top:16px;font-size:12px;line-height:1.8;color:var(--faint);max-width:52ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="topnav"><a href="../">← m-note トップ</a></nav>
+
+  <header class="hero">
+    <p class="kicker">探る・整える · 原始仏教</p>
+    <h1>心を観察し、執着を手放す</h1>
+    <p class="lead">約2500年前、ゴータマ・シッダールタ（釈迦）が悟りを開き、人々に直接語った最初の教え——原始仏教。神にすがるのではなく、自分の心を解剖学のように観察し、苦しみを自分の手で滅ぼす。宗教というより、クールで合理的な"心の実践システム"——2500年前に見出された、<strong>人間の精神の"最適解"</strong>だ。</p>
+  </header>
+
+  <section>
+    <p class="eyebrow">この教えの、捉え方</p>
+    <h2>2500年前に見つかっていた、人間の精神の"最適解"</h2>
+    <div class="measure">
+      <p>原始仏教を「古い宗教」として読むと、本質を見失う。釈迦が2500年前に考え抜いたのは、<strong>人間の精神性における"最適解"</strong>だと捉えたほうがいい。</p>
+      <p>人間は、<strong>無常な世界で「変わらないでほしい」と願い、無我なのに「確固たる自分」に執着する</strong>——そういう仕組みと制約を抱えて生まれてくる。釈迦は、その制約を否定も美化もせず、ありのままに理解した。そのうえで、<strong>この制約の中で、社会にとっても個人にとっても最も良い状態になるには、世界をどう捉え、心をどう扱えばいいか</strong>——その"最適な捉え方"を提示した。</p>
+      <p>だからこの教えは、信じる・信じないの対象ではなく、<strong>使い、確かめるもの</strong>だ。釈迦の教えを入口にして、世界や人間の仕組み・制約を深く掘り下げ、そこから<strong>自分自身にとっての最適解</strong>を見つけていく。このページは、そのための地図として読んでほしい。</p>
+    </div>
+    <blockquote class="pull">世界を変えるのではなく、世界の捉え方を最適化する。<br>それが、釈迦が示した人間の精神の解法だ。</blockquote>
+  </section>
+
+  <section>
+    <p class="eyebrow">根本のスタンス</p>
+    <h2>自灯明・法灯明 — 誰にもすがらない</h2>
+    <div class="measure">
+      <p>原始仏教は、絶対的な神仏に救済を祈る宗教ではない。釈迦は亡くなる前、<strong>「自分自身を頼りとし（<em class="term">自灯明</em>）、法＝真理を頼りとしなさい（<em class="term">法灯明</em>）」</strong>と説いた。</p>
+      <p>誰かに救ってもらうのではない。自分の心を観察し、自己をコントロールすることで、<strong>自分自身の手で苦しみを滅ぼす</strong>。これが出発点であり、以降のすべての教えは、そのための道具立てになっている。</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">世界の見方</p>
+    <h2>三法印と縁起 — すべては、うつろい、つながる</h2>
+    <ul class="teach">
+      <li><span class="lbl">諸行無常<small>SHOGYŌ MUJŌ</small></span><span class="txt">作られたものは常に変化し続け、永遠に変わらないものは一つもない。</span></li>
+      <li><span class="lbl">諸法無我<small>SHOHŌ MUGA</small></span><span class="txt">確固たる「私（我）」という実体はない。すべては関係性の中で、仮に成り立っているだけ。</span></li>
+      <li><span class="lbl">一切皆苦<small>ISSAI KAIKU</small></span><span class="txt">無常・無我のこの世界で「思い通りにしたい」「永遠に続いてほしい」と執着する限り、すべては苦（<em class="term">ドゥッカ</em>＝思い通りにならないこと）となる。</span></li>
+      <li><span class="lbl">縁起<small>ENGI</small></span><span class="txt">すべての現象は、原因と条件が結びついて生じ、それらが無くなれば滅びる。独立して存在するものはない。</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="lens">
+      <span class="tag">現代の視点</span>
+      <h2>「無明」とは、認知バイアスのこと</h2>
+      <div class="measure">
+        <p>心は放っておくと、自動的に世界を歪めて捉える。「これは永遠に続く」（本当は無常なのに）、「これは確固たる私だ」（本当は無我なのに）——原始仏教が<strong>無明（無知）</strong>と呼んだこの自動的な思い込みは、現代でいう<strong>認知バイアス</strong>に驚くほど近い。三法印は、この根本的な錯覚を名指ししたものとも読める。</p>
+        <p>私たちは、自分の解釈を"事実"だと信じ込む。ネガティブに偏り、過去や未来に囚われ、自分を中心に世界を見る。ヴィパッサナーの<strong>「評価せず、ありのままに観る」</strong>は、この自動的な歪みに気づき、反射的な反応を止める訓練にほかならない。バイアスを消すのではなく、<strong>"それに気づく"ことで、支配されなくなる</strong>。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="lens">
+      <span class="tag">現代の視点</span>
+      <h2>釈迦は、量子力学を先取りしていた？</h2>
+      <div class="measure">
+        <p>諸法無我と縁起——「独立して存在するものはなく、すべては関係の中で仮に成り立つ」という2500年前の洞察は、20世紀の<strong>量子力学</strong>の世界像と不思議なほど響き合う。量子の世界では、粒子は観測・相互作用の中で初めて性質が定まり、単独で「確固たるこれ」と言える実体はない。<strong>「もの」より「関係」が先にある</strong>——諸法無我・縁起そのものだ。</p>
+        <p>宗教的な直観と物理理論を短絡させるのは慎重であるべきだが、<strong>「世界は固定した"もの"の集まりではなく、移ろい、つながり合う関係の網である」</strong>——この一点で、古代の内観と現代の科学が同じ地平を指しているのは、確かに面白い。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="lens">
+      <span class="tag">現代の視点</span>
+      <h2>「縁起」は、システム思考でありエントロピーでもある</h2>
+      <div class="measure">
+        <p><strong>システム思考</strong>——ものごとを単独でなく、相互に影響し合う"関係の網"として捉える見方は、縁起（原因と条件が結びついて生じる）とそのまま重なる。独立した部分の寄せ集めではなく、全体の相互作用として世界を見る。</p>
+        <p>また<strong>エントロピー</strong>（すべては秩序から無秩序へ、不可逆に移ろうという法則）は、諸行無常——「永遠に変わらないものは一つもない」——の物理的な言い換えのようでもある。宇宙のもっとも基本的な法則が、"うつろい"を語っている。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">苦と執着</p>
+    <h2>なぜ、私たちは苦しむのか</h2>
+    <div class="measure">
+      <p>苦（<em class="term">ドゥッカ</em>）は、痛みだけを指すのではない。<strong>「思い通りにならないこと」全般</strong>を指す。</p>
+      <p>その正体はシンプルだ。<strong>変わり続けるもの（無常）に、変わらないでほしいとしがみつくこと</strong>。握りしめるから、それがこぼれ落ちるときに苦しむ。原因は外の世界ではなく、心の中にある<strong>渇愛（<em class="term">タンハー</em>＝激しい欲求・執着）</strong>——「もっと欲しい」「これを失いたくない」「こうであってほしい」。</p>
+      <p>大事なのは、<strong>欲そのものが悪なのではない</strong>ということ。悪いのは"握りしめる"こと。夕日を美しいと感じてよいし、味わってよい。ただ、それを握りしめて「永遠にここに留めたい」とした瞬間に、苦が生まれる。<strong>味わうけれど、握りしめない</strong>。</p>
+    </div>
+
+    <h3>苦には、どんな種類があるか — 四苦八苦</h3>
+    <p class="measure">仏教は、苦をぼんやりとは扱わない。具体的に分類する。根本の「四苦」に、四つを加えたものが「八苦」だ。</p>
+    <ul class="teach">
+      <li><span class="lbl">生苦</span><span class="txt">生まれ、生きていくことそのものに伴う苦。</span></li>
+      <li><span class="lbl">老苦</span><span class="txt">老いて、心身が衰えていく苦。</span></li>
+      <li><span class="lbl">病苦</span><span class="txt">病に侵される苦。</span></li>
+      <li><span class="lbl">死苦</span><span class="txt">死んでいく苦、その恐れ。</span></li>
+      <li><span class="lbl">愛別離苦</span><span class="txt">愛する人・ものと、別れなければならない苦。</span></li>
+      <li><span class="lbl">怨憎会苦</span><span class="txt">憎い人・嫌なことと、出会ってしまう苦。</span></li>
+      <li><span class="lbl">求不得苦</span><span class="txt">求めても、得られない苦。</span></li>
+      <li><span class="lbl">五蘊盛苦</span><span class="txt">心と身体（五蘊）そのものへの執着から生じる苦。生きている限りついてまわる、苦の土台。</span></li>
+    </ul>
+
+    <h3>執着（渇愛）には、どんな種類があるか</h3>
+    <p class="measure">苦の原因である渇愛（<em class="term">タンハー</em>）も、大きく三つに分けられる。</p>
+    <ul class="teach">
+      <li><span class="lbl">欲愛<small>KĀMA</small></span><span class="txt">五感の快楽を求める渇愛。「見たい・食べたい・気持ちよくいたい」。</span></li>
+      <li><span class="lbl">有愛<small>BHAVA</small></span><span class="txt">「在り続けたい・変わらずにいたい」という渇愛。永遠や、確固たる自分への執着。</span></li>
+      <li><span class="lbl">無有愛<small>VIBHAVA</small></span><span class="txt">「消えたい・無くなりたい」という渇愛。自己否定や破壊へ向かう執着。</span></li>
+    </ul>
+    <p class="measure">執着の対象は、モノ・お金・人・地位・評価・過去の思い出——数えきれない。だが本当に厄介なのは、目に見えるものより、<strong>「こうあるべき」という考えや、"自分"というイメージそのもの</strong>への執着だ。手放しにくいのは、握っている自覚すらないから。</p>
+
+    <blockquote class="pull">苦しみは、世界の側にあるのではない。変わるものに「変わるな」と願う、心の側に生まれる。</blockquote>
+  </section>
+
+  <section>
+    <div class="lens">
+      <span class="tag">現代の視点</span>
+      <h2>西洋にも、同じ答えがあった — ストア哲学</h2>
+      <div class="measure">
+        <p>ほぼ同時代の古代ギリシャ・ローマで育った<strong>ストア哲学</strong>も、驚くほど近い結論に達している。エピクテトスは説いた——<strong>「人を悩ませるのは出来事そのものではなく、出来事についての判断（捉え方）である」</strong>。苦は世界の側ではなく心の側に生まれる、という原始仏教の洞察と同じだ。</p>
+        <p>ストア派の核心は<strong>「コントロールの二分法」</strong>。自分の力が及ぶこと（自分の判断・行動）と、及ばないこと（他人・天気・過去・結果）を切り分け、後者に執着しない。これは「思い通りにならないものを、思い通りにしようとして苦しむ」という渇愛の構造を、別の言葉で言い当てている。東西の賢人が、互いを知らぬまま同じ最適解へたどり着いていた。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="lens">
+      <span class="tag">現代の視点</span>
+      <h2>渇愛と「快楽のトレッドミル」</h2>
+      <div class="measure">
+        <p>現代の幸福研究には<strong>「快楽のトレッドミル（快楽順応）」</strong>という概念がある。欲しかったものを手に入れても、人はすぐに慣れ、幸福感はもとの水準へ戻り、また次を欲しがる——走っても走っても同じ場所にいる、回し車のような状態だ。</p>
+        <p>これは、渇愛（<em class="term">タンハー</em>）＝「もっと、もっと」という終わりのない欲求が苦を生む、という集諦の指摘と正確に重なる。満たすことで渇愛を消そうとしても、順応が待っているだけ。原始仏教が示す出口は逆方向だ——<strong>手に入れて満たすのではなく、握りしめる手そのものをゆるめる</strong>。渇愛の回し車から、降りる。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">苦しみを治す設計図</p>
+    <h2>四聖諦 — 医者が病を診るように</h2>
+    <div class="measure"><p>原始仏教は、苦しみを解決するために、医者が病気を治すのと同じ論理的な手順をとる。それが四つの真理だ。</p></div>
+    <ul class="teach">
+      <li><span class="lbl">苦諦<small>診断</small></span><span class="txt">現実は苦しみ（思い通りにならないこと）であると、ありのままに認める。</span></li>
+      <li><span class="lbl">集諦<small>病因</small></span><span class="txt">その苦しみの原因は、心の中の「渇愛（執着）」であると特定する。</span></li>
+      <li><span class="lbl">滅諦<small>ゴール</small></span><span class="txt">渇愛を完全に消し、煩悩が吹き消された状態＝涅槃が、苦のない理想の境地だと知る。</span></li>
+      <li><span class="lbl">道諦<small>処方箋</small></span><span class="txt">その涅槃へ至る具体的な実践がある。それが八正道。</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="eyebrow">中道の実践</p>
+    <h2>八正道 — 極端に走らない、8つの道</h2>
+    <div class="measure"><p>極端な快楽主義も、逆の極端な苦行も否定し、<strong>中道（<em class="term">ちゅうどう</em>）</strong>を歩む。その具体的な実践が、次の8つ。</p></div>
+    <ul class="teach">
+      <li><span class="lbl">正見</span><span class="txt">正しい見解。四聖諦や縁起の道理を理解する。</span></li>
+      <li><span class="lbl">正思惟</span><span class="txt">正しい思考。欲・怒り・害意を持たない。</span></li>
+      <li><span class="lbl">正語</span><span class="txt">正しい言葉。嘘・悪口・陰口・無駄話をしない。</span></li>
+      <li><span class="lbl">正業</span><span class="txt">正しい行い。殺生・盗み・不貞をしない。</span></li>
+      <li><span class="lbl">正命</span><span class="txt">正しい生活。他者を害する職業を避ける。</span></li>
+      <li><span class="lbl">正精進</span><span class="txt">正しい努力。悪を断ち、善を育てる。</span></li>
+      <li><span class="lbl">正念<small>SATI</small></span><span class="txt">正しい気づき。今この瞬間の心と身体の動きに、常に自覚的でいる。</span></li>
+      <li><span class="lbl">正定</span><span class="txt">正しい集中。心が乱れず、深く穏やかに統一された瞑想状態。</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <p class="eyebrow">瞑想</p>
+    <h2>止と観 — 鎮める瞑想、観る瞑想</h2>
+    <div class="measure">
+      <p>修行の要が瞑想だ。大きく2つのアプローチがある。</p>
+      <h3>サマタ瞑想（止）</h3>
+      <p>心を一つの対象（呼吸など）に集中させ、怒りや欲などの煩悩（五蓋）を鎮め、心を深く穏やかにする。まず、波立った水面を静める。</p>
+      <h3>ヴィパッサナー瞑想（観）</h3>
+      <p><strong>「ありのままに観察する」</strong>瞑想。自分の身体の感覚、心の動き、感情を、良い・悪いと評価せずに、ただ客観的に見つめる（四念処＝<em class="term">サティパッターナ</em>）。心身を通して「無常・苦・無我」を、知識としてではなく<strong>直接体験</strong>し、深い智慧（<em class="term">パンニャー</em>）を得る。この智慧こそが、最終的に煩悩を根絶やしにする刃になる。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="lens">
+      <span class="tag">現代の視点</span>
+      <h2>「観る」とは、メタ認知だった</h2>
+      <div class="measure">
+        <p>ヴィパッサナーやサティ（正念）がやっていることは、現代心理学でいう<strong>メタ認知</strong>——<strong>自分の思考や感情を、一段上から客観的に眺めること</strong>——とほぼ同じだ。</p>
+        <p>怒りが湧いたとき、その怒りに飲み込まれる（＝感情と自分が一体化する）のではなく、<strong>「怒りが今、生じている」と気づいている自分</strong>がいる。思考は"事実"ではなく、心に現れては消える現象にすぎない。そう観る視点に立てた瞬間、<strong>刺激と反応の間に、隙間が生まれる</strong>。その隙間こそが自由だ。反射的に反応する代わりに、選べるようになる。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="lens">
+      <span class="tag">現代の視点</span>
+      <h2>マインドフルネスは、ここから生まれた</h2>
+      <div class="measure">
+        <p>現代の<strong>マインドフルネス</strong>は、原始仏教のサティ（正念）とヴィパッサナーから、<strong>宗教的な枠組みを外して取り出した実践</strong>だ。「今、この瞬間に、評価をまじえず気づいている」状態——呼吸、身体感覚、湧いてくる思考を、ただ観る。</p>
+        <p>2500年前に磨かれた"心の技術"が、宗教を超えて、ストレス低減や心の健康の方法として現代に生きている。マインドフルネスを深く辿っていくと、必ずこの源流に行き着く。原始仏教は、その原点にある実践なのだ。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="lens">
+      <span class="tag">現代の視点</span>
+      <h2>「無我」の、神経科学 — DMN</h2>
+      <div class="measure">
+        <p>脳には<strong>デフォルト・モード・ネットワーク（DMN）</strong>という、何もしていないときに自動で動く回路がある。過去や未来をさまよい、"自分"について考え続ける、あの止まらない独り言の源だ。瞑想の熟練者では、このDMNの活動が静まることが分かってきた。思考のさまよいが鎮まり、「確固たる自分」という感覚がゆるむ——<strong>無我</strong>が、神経のレベルで観測されはじめている。2500年前の内観に、脳科学が追いついてきた。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">悟りとは何か</p>
+    <h2>悟り — 見え方が、根本から変わること</h2>
+    <div class="measure">
+      <p>悟り（<em class="term">ボーディ</em>＝目覚め）は、特別な神秘体験でも、超能力でもない。<strong>世界と自分の本当のあり方を、頭でなく直接、見て取ること</strong>だ。</p>
+      <p>瞑想による観察を通じて、無常・苦・無我が"体験として"腑に落ちると、根本的な思い込み（<strong>無明</strong>）が晴れる。「変わらないもの」「確固たる自分」という幻想が見抜かれる。すると——<strong>執着する理由そのものが、消える</strong>。しがみつく相手が、もともと幻だったと分かるからだ。</p>
+      <p>大事なのは、悟っても<strong>世界は何も変わらない</strong>ということ。変わるのは、世界の"捉え方"だ。同じ出来事が起きても、そこに苦を生み出す反応が起きなくなる。仏教では、この目覚めは一足飛びではなく、煩悩が段階的に減っていく道のり（預流・一来・不還・阿羅漢）として描かれる。</p>
+      <p>そして、その智慧によって三毒（貪・瞋・癡）の火が完全に消えた状態が——次に述べる涅槃だ。</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">最終ゴール</p>
+    <h2>涅槃 — 生きているうちの、心の平安</h2>
+    <div class="measure">
+      <p>目指すのは、死後に天国へ行くことではない。<strong>生きているこの瞬間に</strong>、心の中の三つの毒——<strong>貪（むさぼり）・瞋（怒り）・癡（無知）</strong>——という煩悩の火を、完全に吹き消した状態。それが<strong>涅槃（<em class="term">ニルヴァーナ</em>）</strong>だ。</p>
+      <p>涅槃に至った者（阿羅漢）は、どんな理不尽なことが起きても心が揺らがず、究極の平安と自由の中で生き、苦しみの生と死の繰り返し（輪廻）から完全に解脱する。</p>
+    </div>
+  </section>
+
+  <section style="border-bottom:none">
+    <p class="eyebrow">まとめ</p>
+    <h2>心を、解剖学のように観る</h2>
+    <div class="measure">
+      <p>日本に伝わった仏教の多くは、後の時代に発展した大乗仏教であり、呪術的な儀式や、死者のための法要、特定の仏への信仰などが混ざっている。だが本来の原始仏教の姿は、とてもクールで合理的だ。</p>
+      <p><strong>自己の心を解剖学のように観察し、法則を理解し、執着を手放すことで、究極の心の平穏（幸福）を手に入れる。</strong>——苦しみの外に救いを求めるのではなく、苦しみが生まれる仕組みを、自分の心の中に見る。それが、原始仏教という実践的なシステムだ。</p>
+    </div>
+    <blockquote class="pull">自分を頼りに、真理を頼りに。<br>観察し、気づき、手放す。</blockquote>
+  </section>
+
+  <footer>
+    <a class="back" href="../">← m-note トップへ戻る</a>
+    <p class="disclaimer">専門家ではない個人が、学びを自分の言葉でまとめた個人的なノートです。内容の正確性を保証するものではありません。</p>
+  </footer>
+
+</div>
+</body>
+</html>
